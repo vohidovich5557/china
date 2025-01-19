@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Burger } from "../../assets/svg";
-import LogoMini from '../../assets/logoMini.png'
+import LogoMini from "../../assets/logoMini.png";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
@@ -22,43 +22,53 @@ export const Header = () => {
         };
     }, [open]);
 
+    const handleNavigation = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+        setOpen(false); // Close the navigation bar
+    };
+
     return (
         <>
             <div className="w-full py-[10px]">
                 <div className="w-full flex items-center justify-between px-4 xl:px-[32px]">
-                    <div onClick={() => navigate('/')} className="flex items-center cursor-pointer gap-[10px]">
-                        <div  className="xl:w-[50px] xl:h-[50px] w-[35px] h-[35px]">
+                    <div onClick={() => navigate("/")} className="flex items-center cursor-pointer gap-[10px]">
+                        <div className="xl:w-[50px] xl:h-[50px] w-[35px] h-[35px]">
                             <img src={LogoMini} alt="logo" className="w-[100%] h-[100%]" />
                         </div>
-                        <span className="text-main text-[18px] xl:text-[20px] md:text-[18px] font-bold">BK-NIHAO CHINA</span>
+                        <span className="text-main text-[18px] xl:text-[20px] md:text-[18px] font-bold">
+                            BK-NIHAO CHINA
+                        </span>
                     </div>
                     <div onClick={() => setOpen(true)} className="cursor-pointer xl:hidden">
                         <Burger />
                     </div>
                     <div className="xl:flex hidden items-center gap-[24px]">
                         <a
-                            href="#about"
+                            onClick={() => handleNavigation("hero")}
                             className="relative hover:text-blue-950 text-main/50 group"
                         >
                             Biz haqimizda
                             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
                         </a>
                         <a
-                            href="#services"
+                            onClick={() => handleNavigation("industry")}
                             className="relative hover:text-blue-950 text-main/50 group"
                         >
                             Xizmatlar
                             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
                         </a>
                         <a
-                            href="#courses"
+                            onClick={() => handleNavigation("location")}
                             className="relative hover:text-blue-950 text-main/50 group"
                         >
-                            Xitoy til kursi
+                            Manzil
                             <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
                         </a>
                         <a
-                            href="#contact"
+                            onClick={() => handleNavigation("contact")}
                             className="relative hover:text-blue-950 text-main/50 group"
                         >
                             Biz bilan Bog`laning
@@ -80,16 +90,28 @@ export const Header = () => {
                     ✕
                 </button>
                 <nav className="flex flex-col gap-6 text-xl font-medium overflow-y-auto">
-                    <a href="#about" className="hover:text-blue-950">
+                    <a
+                        onClick={() => handleNavigation("hero")}
+                        className="hover:text-blue-950"
+                    >
                         Biz haqimizda
                     </a>
-                    <a href="#services" className="hover:text-blue-950">
+                    <a
+                        onClick={() => handleNavigation("industry")}
+                        className="hover:text-blue-950"
+                    >
                         Xizmatlar
                     </a>
-                    <a href="#courses" className="hover:text-blue-950">
-                        Xitoy til kursi
+                    <a
+                        onClick={() => handleNavigation("location")}
+                        className="hover:text-blue-950"
+                    >
+                        Manzil
                     </a>
-                    <a href="#contact" className="hover:text-blue-950">
+                    <a
+                        onClick={() => handleNavigation("contact")}
+                        className="hover:text-blue-950"
+                    >
                         Biz bilan bog`laning
                     </a>
                 </nav>

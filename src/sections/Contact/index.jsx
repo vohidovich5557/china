@@ -32,7 +32,7 @@ export const Contact = () => {
     }
     return (
         <>
-         <div className="w-[100%] flex items-start px-4 xl:px-[32px] py-[60px] xl:py-[70px]"
+         <div className="w-[100%] flex items-start px-4 xl:px-[32px] py-[60px] xl:py-[50px]"
           style={{
             backgroundImage: `url(${ContactImage})`,
             }}

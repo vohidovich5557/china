@@ -22,10 +22,10 @@ export const Hero = () => {
                         </span>
                     </div>
                     <div className="flex flex-col xl:flex-row items-center gap-[20px]">
-                        <button className="py-[11px] px-[36px] rounded-[20px] hover:text-orangeMain hover:bg-transparent border-2 border-orangeMain transition-all duration-300 ease-in-out text-white font-[600] bg-orangeMain">
+                        <button onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })} className="py-[11px] px-[36px] rounded-[20px] hover:text-orangeMain hover:bg-transparent border-2 border-orangeMain transition-all duration-300 ease-in-out text-white font-[600] bg-orangeMain">
                             Savolingizni qoldiring
                         </button>
-                        <button className="py-[10px] px-[36px] rounded-[20px] hover:text-main hover:bg-white transition-all duration-300 ease-out text-white font-[600] border-white border-2">
+                        <button onClick={() => document.getElementById("industry").scrollIntoView({ behavior: "smooth" })} className="py-[10px] px-[36px] rounded-[20px] hover:text-main hover:bg-white transition-all duration-300 ease-out text-white font-[600] border-white border-2">
                             Ko`proq ma`lumot
                         </button>
                     </div>

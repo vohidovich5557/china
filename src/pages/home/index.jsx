@@ -8,16 +8,16 @@ export const Home = () => {
     return (
         <>
          <div className="w-[100%] pt-[10px] border-black">
-            <section>
+            <section id="hero">
                 <Hero />
             </section>
-            <section>
+            <section id="industry">
                 <Industry />
             </section>
-            <section>
+            <section id="location">
                 <Location />
             </section>
-            <section>
+            <section id="contact">
                 <Contact />
             </section>
          </div>
