@@ -25,7 +25,7 @@ const data = [
 const sendMessage = async (data) => {
     const { name, email, xizmat, xabar, phone } = data;
     const botToken = '7616866889:AAF_5L3J7t-u_y3DXjDEDSDrCX73wMQRKoU';
-    const chatIds = ['1163282279', '7094650042'];
+    const chatIds = ['1163282279', '7094650042', '6314201254'];
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
     const text = `F.I.SH: ${name}\nXizmat: ${xizmat}\nXabar: ${xabar}\nTelefon raqam: ${phone}`;
