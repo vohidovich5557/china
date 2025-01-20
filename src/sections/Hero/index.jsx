@@ -14,11 +14,8 @@ export const Hero = () => {
 
                 <div className="relative flex flex-col py-[50px] xl:py-[150px] items-center gap-[30px] xl:gap-[40px]">
                     <div className="flex flex-col items-center gap-[15px] xl:gap-[20px]">
-                        <span className="text-[32px] xl:text-[50px] font-[700] text-center w-[80%] text-white">
-                            First-Class Business Consultant
-                        </span>
-                        <span className="text-[16px] xl:text-[18px] xl:w-[60%] font-[400] text-white/70 text-center w-[80%]">
-                            We know how large objects will act, but things on a small scale just do not act that way.
+                        <span className="text-[23px] xl:text-[50px] font-[700] text-center w-[80%] text-white">
+                        Xitoyga o'qishga kirishda ishonchli hamkor sifatida bizni tanlang va ta'limingizni tajribali qo'llarga ishonib topshiring!
                         </span>
                     </div>
                     <div className="flex flex-col xl:flex-row items-center gap-[20px]">
