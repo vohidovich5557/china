@@ -25,27 +25,33 @@ const data = [
 const sendMessage = async (data) => {
     const { name, email, xizmat, xabar, phone } = data;
     const botToken = '7616866889:AAF_5L3J7t-u_y3DXjDEDSDrCX73wMQRKoU';
-    const chatId = '1163282279';
+    const chatIds = ['1163282279', '7094650042'];
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
     const text = `F.I.SH: ${name}\nXizmat: ${xizmat}\nXabar: ${xabar}\nTelefon raqam: ${phone}`;
 
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: text,
-        }),
-      });
+    for (const chatId of chatIds) {
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: text,
+            }),
+          });
     
-      if (!response.ok) {
-        throw new Error('Failed to send message');
+          if (!response.ok) {
+            console.error(`Failed to send message to chatId: ${chatId}`);
+          } else {
+            console.log(`Message sent to chatId: ${chatId}`);
+          }
+        } catch (error) {
+          console.error(`Error sending message to chatId: ${chatId}`, error);
+        }
       }
-    
-      return response.json();
     };
 
 export const Contact = () => {
