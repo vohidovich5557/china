@@ -22,14 +22,45 @@ const data = [
     }
 ]
 
+const sendMessage = async (data) => {
+    const { name, email, xizmat, xabar, phone } = data;
+    const botToken = '7616866889:AAF_5L3J7t-u_y3DXjDEDSDrCX73wMQRKoU';
+    const chatId = '1163282279';
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    const text = `F.I.SH: ${name}\nXizmat: ${xizmat}\nXabar: ${xabar}\nTelefon raqam: ${phone}`;
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: text,
+        }),
+      });
+    
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+    
+      return response.json();
+    };
+
 export const Contact = () => {
     const {register, handleSubmit, reset, formState: {errors}} = useForm()
 
-    const submit = (data) => {
-        console.log(data);
-        reset()
-        toast.success('muvofaqilaytli yuborildi')
+    const submit = async(data) => {
+        try {
+            await sendMessage(data)
+            reset()
+            toast.success('Xabar yuborildi')
+        } catch (error) {
+            toast.error(error.message)
+        }
     }
+
     return (
         <>
          <div className="w-[100%] flex items-start px-4 xl:px-[32px] py-[60px] xl:py-[50px]"
