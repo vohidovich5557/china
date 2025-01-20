@@ -21,7 +21,7 @@ export const Location = () => {
                 <span><a href="https://maps.app.goo.gl/dadhvRUXxSbfNdVu8" target="_blank">Uzbekiston, Bukhara</a></span>
             </div>
             <div className="w-auto py-[10px] hover:shadow-lg hover:shadow-red-600/70 transition-all duration-300 shadow-md shadow-gray-400/60 bg-white rounded-[20px]  px-[10px]">
-                <span className="text-red-600/80"><a href="tel:+998 93 969 50 55">+998 93 969 50 55</a></span>
+                <span className="text-red-600/80"><a href="tel:+998 94 344 13 14">+998 94 344 13 14</a></span>
             </div>
             <div className="w-auto py-[10px] hover:shadow-lg hover:shadow-rareBlack transition-all duration-300 shadow-md shadow-gray-400/60 bg-white rounded-[20px]  px-[10px]">
                 <Link to='https://t.me/nihao_chinaa'>
